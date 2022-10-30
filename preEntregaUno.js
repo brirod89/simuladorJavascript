@@ -1,11 +1,12 @@
 /*
-El proyecto està orientado en el registro de equipos que ingresan al service. Para ello se le pide al cliente tres datos:
+El proyecto está orientado en el registro de equipos que ingresan al service. 
+Para ello se le pide al cliente tres datos:
 1. El Modelo
 2. El Nùmero de Serie
 3. El año de Antiguedad (este ùltimo para corroborar la garantía)
 
-Si la cantidad de años es mayor a 2 la garantía queda obsoleta. 
-Mientras que si el periodo es mejor a dos años, la garantía está vigente
+Si la antiguedad es mayor a 2 años, la garantía queda obsoleta. 
+Mientras que si el periodo es mayor a dos años, la garantía está vigente.
 
 Luego de corroborar los datos, el simulador nos vuelve a pedir registros. En el caso que el usuario tenga un equipo
 más para ingresar lo podrá hacer, ingresando nuevos datos. Mientras que si no tiene otro equipo para ingresar, el simulador
