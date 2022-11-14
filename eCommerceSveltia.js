@@ -19,13 +19,13 @@ class Equipo {
 }
 
 const criolipolisis = new Equipo(1, "Criolipolisis", 600000)
-//precioLista.push(criolipolisis)
+
 const hammer = new Equipo(2, "Hammer Sveltia", 300000)
-//precioLista.push(hammer)
+
 const bodyGo = new Equipo(3, "BodyGo Perform", 1500000)
-//precioLista.push(bodyGo)
+
 const laser = new Equipo(4, "Dermolight Laser", 3500000)
-//precioLista.push(laser)
+
 
 const precioLista = [criolipolisis, hammer, bodyGo, laser]
 
