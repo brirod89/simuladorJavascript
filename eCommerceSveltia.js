@@ -24,7 +24,6 @@ consultarProductos().then(productos => {
 })
 
 
-
 let carrito
 const carritoStorage = JSON.parse(localStorage.getItem('carrito'))
 if (carritoStorage) {
@@ -41,7 +40,7 @@ const botonesAgregar = document.querySelectorAll('.btn-primary')
 botonesAgregar.forEach((boton) => {
     boton.onclick = () => {
 
-        const productoSeleccionado = catalogo.find(
+        const productoSeleccionado = productos.find(
             (prod) => prod.id === parseInt(boton.id)
         )
 
@@ -71,6 +70,12 @@ botonFinalizar.onclick = () => {
     ))
     console.log(totalCompra)
     console.log(valores)
-    alert("El total de su compra es de " + totalCompra)
+    
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: "El total de su compra es de " + totalCompra,
+        showConfirmButton: false,
+        timer: 1500
+      })
 }
-
