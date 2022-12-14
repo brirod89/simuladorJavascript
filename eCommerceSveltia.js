@@ -25,7 +25,7 @@ let elemento;
 const crearEventosCatalogo = () => {
     /* Selecting DOM nodelist */
     const buttons = document.querySelectorAll('button');
-
+    
     /* Callback function */
     const alertButton = (evento) => {
         console.log('Añadiendo a Carrito', evento);
@@ -37,6 +37,14 @@ const crearEventosCatalogo = () => {
             if(parseInt(producto.id)===elemento)
             {
                 carrito.push(producto);
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Producto agregado al carrito',
+                    showConfirmButton: false,
+                    timer: 1000
+                  })
             }
         })
         console.log("quiero ver el carrito", carrito);
@@ -44,7 +52,7 @@ const crearEventosCatalogo = () => {
      
     /* Event listeners */
     for (let button of buttons) {
-          button.addEventListener('click', alertButton, false);    
+          button.addEventListener('click', alertButton, false);         
     }
     
 }
@@ -101,15 +109,15 @@ botonBorrar.onclick = () => {
     }
 
     Swal.fire({
-        title: 'Se ha borrado el carrito',
+        title: 'Carrito borado',
         icon: 'info',
         html:
-          '¿Quiere volver a realizar una nueva compra?',
+          'Vuelva a agregar productos a su carrito y confirme con FINALIZAR COMPRA',
         showCloseButton: true,
-        showCancelButton: true,
+        showCancelButton: false,
         focusConfirm: false,
         confirmButtonText:
-          '<i class="fa fa-thumbs-up"></i> Si, por favor!',
+          '<i class="fa fa-thumbs-up"></i> OK',
         confirmButtonAriaLabel: 'Thumbs up, great!',
         cancelButtonText:
           '<i class="fa fa-thumbs-down"></i> No, gracias!',
@@ -128,10 +136,9 @@ botonFinalizar.onclick = () => {
     console.log(totalCompra)
 
     Swal.fire({
-        position: 'top-end',
         icon: 'success',
-        title: "El valor de su compra es $" + totalCompra,
-        showConfirmButton: false,
-        timer: 15000
-    })
+        title: 'El valor total de su compra es',
+        text: '$ '+totalCompra,
+        footer: 'Gracias por elegir Sveltia'
+      })
 }
